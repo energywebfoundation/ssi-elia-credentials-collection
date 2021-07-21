@@ -1,0 +1,22 @@
+diff --git a/node_modules/base58-universal/main.js b/node_modules/base58-universal/main.js
+index 2c15250..7c56517 100644
+--- a/node_modules/base58-universal/main.js
++++ b/node_modules/base58-universal/main.js
+@@ -8,13 +8,15 @@ import {
+   decode as _decode
+ } from './baseN.js';
+ 
+-// base58 characters (Bitcoin alphabet)
+-const alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+ 
+ export function encode(input, maxline) {
++  // base58 characters (Bitcoin alphabet)
++  const alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+   return _encode(input, alphabet, maxline);
+ }
+ 
+ export function decode(input) {
++  // base58 characters (Bitcoin alphabet)
++  const alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
+   return _decode(input, alphabet);
+ }

@@ -1,0 +1,22 @@
+{
+  "@context": {
+    "elia": "https://vc-context.elia.be/2021/v1/",
+    "HumanIdentityCredential": "elia:HumanIdentityCredential",
+    "nationalNumber": "elia:nationalNumber",
+    "CompanyIdentityCredential": "elia:CompanyIdentityCredential",
+    "companyID": "https://www.wikidata.org/wiki/Property:P3376",
+    "assetID": "elia:assetID",
+    "meteringLink": "elia:meteringLink",
+    "specVC": "elia:specVC",
+    "creationDate": "elia:creationDate",
+    "generalVC": "elia:generalVC",
+    "meteringTimeFrame": "elia:meteringTimeFrame",
+    "meteringUnit": "elia:meteringUnit",
+    "meteringPrecision": "elia:meteringPrecision",
+    "reading": "elia:reading",
+    "energy": "elia:energy",
+    "timeStart": "elia:timeStart",
+    "timeEnd": "elia:timeEnd",
+    "contract": "elia:contract"
+  }
+}

@@ -1,0 +1,102 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1"
+    ],
+    "type": "VerifiablePresentation",
+    "verifiableCredential": [
+        {
+            "@context": [
+                "https://www.w3.org/2018/credentials/v1",
+                {
+                    "@context": {
+                        "elia": "https://vc-context.elia.be/2021/v1/",
+                        "HumanIdentityCredential": "elia:HumanIdentityCredential",
+                        "nationalNumber": "elia:nationalNumber",
+                        "CompanyIdentityCredential": "elia:CompanyIdentityCredential",
+                        "companyID": "https://www.wikidata.org/wiki/Property:P3376",
+                        "assetID": "elia:assetID",
+                        "address": "elia:address",
+                        "meteringLink": "elia:meteringLink",
+                        "specVC": "elia:specVC",
+                        "creationDate": "elia:creationDate",
+                        "generalVC": "elia:generalVC",
+                        "meteringTimeFrame": "elia:meteringTimeFrame",
+                        "meteringUnit": "elia:meteringUnit",
+                        "meteringPrecision": "elia:meteringPrecision"
+                    }
+                },
+                "https://schema.org/"
+            ],
+            "type": [
+                "VerifiableCredential",
+                "AssetIDCredential"
+            ],
+            "id": "<some URI, e.g. https://elia.be/credential/1>",
+            "credentialSubject": {
+                "id": "<asset DID>",
+                "assetID": "541453800000001269",
+                "address": "1234 Apple Street",
+                "meteringLink": {
+                    "id": "<meteringLink URI>"
+                },
+                "specVC": {
+                    "id": "https://elia.be/credential/2"
+                }
+            },
+            "issuer": "<DSO/Supplier DID>",
+            "issuanceDate": "2021-05-14T12:55:30.848Z",
+            "credentialSchema": {
+                "id": "https://elia.be/assetid.json",
+                "type": "JsonSchemaValidator2018"
+            }
+        },
+        {
+            "@context": [
+                "https://www.w3.org/2018/credentials/v1",
+                {
+                    "@context": {
+                        "elia": "https://vc-context.elia.be/2021/v1/",
+                        "HumanIdentityCredential": "elia:HumanIdentityCredential",
+                        "nationalNumber": "elia:nationalNumber",
+                        "CompanyIdentityCredential": "elia:CompanyIdentityCredential",
+                        "companyID": "https://www.wikidata.org/wiki/Property:P3376",
+                        "assetID": "elia:assetID",
+                        "address": "elia:address",
+                        "meteringLink": "elia:meteringLink",
+                        "specVC": "elia:specVC",
+                        "creationDate": "elia:creationDate",
+                        "generalVC": "elia:generalVC",
+                        "meteringTimeFrame": "elia:meteringTimeFrame",
+                        "meteringUnit": "elia:meteringUnit",
+                        "meteringPrecision": "elia:meteringPrecision"
+                    }
+                }
+            ],
+            "type": [
+                "VerifiableCredential",
+                "AssetSpecCredential"
+            ],
+            "id": "<some URI, e.g. https://elia.be/credential/1>",
+            "credentialSubject": {
+                "id": "<asset DID>",
+                "assetID": "541453800000001269",
+                "creationDate": 5000,
+                "meteringLink": {
+                    "id": "<meteringLink URI>"
+                },
+                "generalVC": {
+                    "id": "https://elia.be/credential/2"
+                },
+                "meteringTimeFrame": 2000,
+                "meteringUnit": "watts",
+                "meteringPrecision": 0.001
+            },
+            "issuer": "<Manufacturer DID>",
+            "issuanceDate": "2021-05-14T12:55:30.848Z",
+            "credentialSchema": {
+                "id": "https://elia.be/assetspec.json",
+                "type": "JsonSchemaValidator2018"
+            }
+        }
+    ]
+}

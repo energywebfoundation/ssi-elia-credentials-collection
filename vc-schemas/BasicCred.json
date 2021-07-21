@@ -1,0 +1,20 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        "http://schema.org"
+    ],
+    "type": [
+        "VerifiableCredential"
+    ],
+    "id": "<some URI, e.g. https://eidas-issuer/credential/1>",
+    "credentialSubject": {
+        "id": "<user DID>"
+    },
+    "issuer": "did:example:signer",
+    "issuanceDate": "2021-05-14T12:55:30Z",
+    "expirationDate": "2021-06-14T12:55:30Z",
+    "credentialSchema": {
+        "id": "https://elia.be/humanidentity.json",
+        "type": "JsonSchemaValidator2018"
+    }
+}

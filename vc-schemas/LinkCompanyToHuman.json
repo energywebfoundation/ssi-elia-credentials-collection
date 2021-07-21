@@ -1,0 +1,21 @@
+{
+    "@context": [
+        "https://www.w3.org/2018/credentials/v1",
+        "http://schema.org"
+    ],
+    "type": [
+        "VerifiableCredential",
+        "LinkCompanyToHumanCredential"
+    ],
+    "id": "<some URI, e.g. https://elia.be/credential/1>",
+    "credentialSubject": {
+        "id": "did:example:consumer",
+        "@reverse": {
+            "customer": {
+                "id": "did:example:supplier"
+            }
+        }
+    },
+    "issuer": "did:example:tso",
+    "issuanceDate": "2021-05-14T12:55:30Z"
+}

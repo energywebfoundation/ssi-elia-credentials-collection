@@ -1,0 +1,14 @@
+diff --git a/node_modules/secp256k1/lib/index.js b/node_modules/secp256k1/lib/index.js
+index 8187e17..f1e0326 100644
+--- a/node_modules/secp256k1/lib/index.js
++++ b/node_modules/secp256k1/lib/index.js
+@@ -19,7 +19,8 @@ function assert (cond, msg) {
+ }
+ 
+ function isUint8Array (name, value, length) {
+-  assert(value instanceof Uint8Array, `Expected ${name} to be an Uint8Array`)
++  /* Commented out the assert below because was failing despite it being a Uint8Array (according to debugger) */
++  // assert(value instanceof Uint8Array, `Expected ${name} to be an Uint8Array`)
+ 
+   if (length !== undefined) {
+     if (Array.isArray(length)) {
