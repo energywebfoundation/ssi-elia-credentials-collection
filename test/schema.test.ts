@@ -1,15 +1,15 @@
 import Ajv, { Schema } from "ajv"
 import addFormats from "ajv-formats"
-import assetIDSchema from '../src/schema-def/AssetIDSchema.json'
-import assetIDCredential from '../src/vc-schemas/AssetIDCredential.json'
-import assetSpecSchema from '../src/schema-def/AssetSpecSchema.json'
-import assetSpecCredential from '../src/vc-schemas/AssetSpecCredential.json'
-import humanIdentitySchema from '../src/schema-def/HumanIdentitySchema.json'
-import humanIdentityCredential from '../src/vc-schemas/HumanIdentityCredential.json'
-import companyIdentitySchema from '../src/schema-def/CompanyIdentitySchema.json'
-import companyIdentityCredential from '../src/vc-schemas/CompanyIdentityCredential.json'
-import timeSeriesSchema from '../src/schema-def/TimeSeriesSchema.json'
-import timeSeriesCredential from '../src/vc-schemas/TimeSeriesCredential.json'
+import assetIDSchema from '../src/json-schemas/AssetIDSchema.json'
+import assetIDCredential from '../src/credentials/AssetIDCredential.json'
+import assetSpecSchema from '../src/json-schemas/AssetSpecSchema.json'
+import assetSpecCredential from '../src/credentials/AssetSpecCredential.json'
+import humanIdentitySchema from '../src/json-schemas/HumanIdentitySchema.json'
+import humanIdentityCredential from '../src/credentials/HumanIdentityCredential.json'
+import companyIdentitySchema from '../src/json-schemas/CompanyIdentitySchema.json'
+import companyIdentityCredential from '../src/credentials/CompanyIdentityCredential.json'
+import timeSeriesSchema from '../src/json-schemas/TimeSeriesSchema.json'
+import timeSeriesCredential from '../src/credentials/TimeSeriesCredential.json'
 
 const ajv = new Ajv()
 addFormats(ajv)

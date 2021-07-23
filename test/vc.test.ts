@@ -3,14 +3,14 @@ import { EcdsaSecp256k1VerificationKey2019 } from '@bloomprotocol/ecdsa-secp256k
 import { EcdsaSecp256k1Signature2019 } from '@bloomprotocol/ecdsa-secp256k1-signature-2019'
 //import { documentLoader } from './document-loader';
 import { documentLoader } from '../test/bloomDocumentLoader'
-import humanIdentityCred from '../src/vc-schemas/HumanIdentityCredential.json'
-import linkCompanyToHumanCredential from '../src/vc-schemas/LinkCompanyToHuman.json'
-import companyIdentityCredential from '../src/vc-schemas/CompanyIdentityCredential.json'
-import timeSeriesCredential from '../src/vc-schemas/TimeSeriesCredential.json'
-import assetIDCredential from '../src/vc-schemas/AssetIDCredential.json'
-import assetSpecCredential from '../src/vc-schemas/AssetSpecCredential.json'
-import termsAndConditionsCredential from '../src/vc-schemas/TermsAndConditionsCredential.json'
-import basicCred from '../src/vc-schemas/BasicCred.json'
+import humanIdentityCred from '../src/credentials/HumanIdentityCredential.json'
+import linkCompanyToHumanCredential from '../src/credentials/LinkCompanyToHuman.json'
+import companyIdentityCredential from '../src/credentials/CompanyIdentityCredential.json'
+import timeSeriesCredential from '../src/credentials/TimeSeriesCredential.json'
+import assetIDCredential from '../src/credentials/AssetIDCredential.json'
+import assetSpecCredential from '../src/credentials/AssetSpecCredential.json'
+import termsAndConditionsCredential from '../src/credentials/TermsAndConditionsCredential.json'
+import basicCred from '../src/credentials/BasicCred.json'
 import keyPair from './fixtures/keyPair.json'
 
 
