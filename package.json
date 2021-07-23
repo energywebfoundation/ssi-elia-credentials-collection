@@ -17,10 +17,12 @@
     "@transmute/vc.js": "^0.7.0-unstable.5",
     "ajv": "8.6.2",
     "ajv-formats": "^2.1.0",
+    "jsonld": "^5.2.0",
     "patch-package": "^6.4.7"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
+    "@types/jsonld": "^1.5.6",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
     "eslint": "^7.31.0",
