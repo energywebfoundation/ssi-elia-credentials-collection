@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "lint": "eslint \"**/*.ts\" --ignore-pattern node_modules/ --fix"
   },
   "author": "",
   "license": "ISC",

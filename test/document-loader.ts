@@ -1,12 +1,12 @@
 import {
   documentLoaderFactory,
   contexts,
-} from '@transmute/jsonld-document-loader';
-import eliaContext from '../src/elia-context.json';
-import didDoc from './fixtures/didDocument.json';
+} from '@transmute/jsonld-document-loader'
+import eliaContext from '../src/elia-context.json'
+import didDoc from './fixtures/didDocument.json'
 import secp256k12019ContextDoc from './fixtures/contexts/secp256k1-2019-v1.json'
 import schemaContextDoc from './fixtures/contexts/schema.json'
-import { IContextMap } from '@transmute/jsonld-document-loader/dist/types';
+import { IContextMap } from '@transmute/jsonld-document-loader/dist/types'
 
 const additionalContexts: IContextMap = {
   "https://vc-context.elia.be/2021/v1/": eliaContext,
@@ -25,8 +25,8 @@ export const documentLoader = documentLoaderFactory.pluginFactory
   })
   .addResolver({
     ['did:example:signer']: {
-      resolve: (did: string) => {
-        return Promise.resolve(didDoc);
+      resolve: () => {
+        return Promise.resolve(didDoc)
       },
     },
   })
