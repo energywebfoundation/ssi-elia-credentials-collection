@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://elia.be/humanidentityschema.json",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "givenName": {
+        "type": "string"
+      },
+      "familyName": {
+        "type": "string"
+      },
+      "address": {
+        "type": "string"
+      },
+      "birthDate": {
+        "type": "string"
+      },
+      "nationalNumber": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "id",
+      "type",
+      "givenName",
+      "familyName",
+      "address",
+      "birthDate",
+      "nationalNumber"
+    ]
+  }

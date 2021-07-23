@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "https://elia.be/assetspecschema.json",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "assetID": {
+        "type": "string"
+      },
+      "creationDate": {
+        "type": "integer"
+      },
+      "meteringLink": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "generalVC": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "meteringTimeFrame": {
+        "type": "integer"
+      },
+      "meteringUnit": {
+        "type": "string"
+      },
+      "meteringPrecision": {
+        "type": "number",
+        "minimum": 0,
+        "exclusiveMinimum": true
+      }
+    },
+    "required": [
+      "id",
+      "assetID",
+      "creationDate",
+      "meteringLink",
+      "generalVC",
+      "meteringTimeFrame",
+      "meteringUnit",
+      "meteringPrecision"
+    ]
+  }
