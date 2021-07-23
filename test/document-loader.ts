@@ -2,7 +2,7 @@ import {
   documentLoaderFactory,
   contexts,
 } from '@transmute/jsonld-document-loader';
-import eliaContext from '../elia-context.json';
+import eliaContext from '../src/elia-context.json';
 import didDoc from './fixtures/didDocument.json';
 import secp256k12019ContextDoc from './fixtures/contexts/secp256k1-2019-v1.json'
 import schemaContextDoc from './fixtures/contexts/schema.json'
