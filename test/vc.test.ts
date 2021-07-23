@@ -15,7 +15,7 @@ import keyPair from './fixtures/keyPair.json';
 
 
 xdescribe("Issuance and verification tests", () => {
-  async function issueAndVerify(credential: object) {
+  async function issueAndVerify(credential: Record<string, unknown>) {
     const vc = await vcjs.ld.createVerifiableCredential({
       credential,
       documentLoader,
