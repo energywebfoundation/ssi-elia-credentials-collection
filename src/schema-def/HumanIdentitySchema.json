@@ -1,37 +1,36 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "$id": "https://elia.be/humanidentityschema.json",
-    "type": "object",
-    "properties": {
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/humanIDs.json",
+  "type": "object",
+  "properties": {
       "id": {
-        "type": "string"
+          "$id": "#/properties/id",
+          "type": "string"
       },
       "type": {
-        "type": "string"
+          "$id": "#/properties/type",
+          "type": "string"
       },
       "givenName": {
-        "type": "string"
+          "$id": "#/properties/givenName",
+          "type": "string"
       },
       "familyName": {
-        "type": "string"
+          "$id": "#/properties/familyName",
+          "type": "string"
       },
       "address": {
-        "type": "string"
+          "$id": "#/properties/address",
+          "type": "string"
       },
       "birthDate": {
-        "type": "string"
+          "$id": "#/properties/birthDate",
+          "type": "string"
       },
       "nationalNumber": {
-        "type": "string"
+          "$id": "#/properties/nationalNumber",
+          "type": "string"
       }
-    },
-    "required": [
-      "id",
-      "type",
-      "givenName",
-      "familyName",
-      "address",
-      "birthDate",
-      "nationalNumber"
-    ]
-  }
+  },
+  "additionalProperties": true
+}

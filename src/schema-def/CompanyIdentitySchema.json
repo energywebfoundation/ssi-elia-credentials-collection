@@ -1,37 +1,36 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "$id": "https://elia.be/companyidentityschema.json",
-    "type": "object",
-    "properties": {
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/companyIdentity.json",
+  "type": "object",
+  "properties": {
       "id": {
-        "type": "string"
+          "$id": "#/properties/id",
+          "type": "string"
       },
       "type": {
-        "type": "string"
+          "$id": "#/properties/type",
+          "type": "string"
       },
       "legalName": {
-        "type": "string"
+          "$id": "#/properties/legalName",
+          "type": "string"
       },
       "companyID": {
-        "type": "string"
+          "$id": "#/properties/companyID",
+          "type": "string"
       },
       "address": {
-        "type": "string"
+          "$id": "#/properties/address",
+          "type": "string"
       },
       "foundingDate": {
-        "type": "string"
+          "$id": "#/properties/foundingDate",
+          "type": "string"
       },
       "siegeSocialAddress": {
-        "type": "string"
+          "$id": "#/properties/siegeSocialAddress",
+          "type": "string"
       }
-    },
-    "required": [
-      "id",
-      "type",
-      "legalName",
-      "companyID",
-      "address",
-      "foundingDate",
-      "siegeSocialAddress"
-    ]
-  }
+  },
+  "additionalProperties": true
+}

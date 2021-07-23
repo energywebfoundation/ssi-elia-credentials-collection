@@ -1,45 +1,48 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "$id": "https://elia.be/assetidschema.json",
-    "type": "object",
-    "properties": {
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "properties": {
       "id": {
-        "type": "string"
+          "$id": "#/properties/id",
+          "type": "string"
       },
       "assetID": {
-        "type": "string"
+          "$id": "#/properties/assetID",
+          "type": "string"
       },
       "address": {
-        "type": "string"
+          "$id": "#/properties/address",
+          "type": "string"
       },
       "meteringLink": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ]
+          "$id": "#/properties/meteringLink",
+          "type": "object",
+          "required": [
+              "id"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/meteringLink/properties/id",
+                  "type": "string"
+              }
+          },
+          "additionalProperties": true
       },
       "specVC": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ]
+          "$id": "#/properties/specVC",
+          "type": "object",
+          "required": [
+              "id"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/specVC/properties/id",
+                  "type": "string"
+              }
+          },
+          "additionalProperties": true
       }
-    },
-    "required": [
-      "id",
-      "assetID",
-      "address",
-      "meteringLink",
-      "specVC"
-    ]
-  }
+  },
+  "additionalProperties": true
+}

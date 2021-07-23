@@ -15,7 +15,8 @@
     "@transmute/jsonld-document-loader": "^0.2.0",
     "@transmute/vc.js": "^0.7.0-unstable.5",
     "ethers": "^5.4.1",
-    "patch-package": "^6.4.7"
+    "patch-package": "^6.4.7",
+    "ajv" : "8.6.2"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",

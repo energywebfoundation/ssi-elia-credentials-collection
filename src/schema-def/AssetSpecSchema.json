@@ -1,59 +1,60 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "$id": "https://elia.be/assetspecschema.json",
-    "type": "object",
-    "properties": {
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/assetSpec.json",
+  "type": "object",
+  "properties": {
       "id": {
-        "type": "string"
+          "$id": "#/properties/id",
+          "type": "string"
       },
       "assetID": {
-        "type": "string"
+          "$id": "#/properties/assetID",
+          "type": "string"
       },
       "creationDate": {
-        "type": "integer"
+          "$id": "#/properties/creationDate",
+          "type": "integer"
       },
       "meteringLink": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ]
+          "$id": "#/properties/meteringLink",
+          "type": "object",
+          "required": [
+              "id"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/meteringLink/properties/id",
+                  "type": "string"
+              }
+          },
+          "additionalProperties": true
       },
       "generalVC": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "id"
-        ]
+          "$id": "#/properties/generalVC",
+          "type": "object",
+          "required": [
+              "id"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/generalVC/properties/id",
+                  "type": "string"
+              }
+          },
+          "additionalProperties": true
       },
       "meteringTimeFrame": {
-        "type": "integer"
+          "$id": "#/properties/meteringTimeFrame",
+          "type": "integer"
       },
       "meteringUnit": {
-        "type": "string"
+          "$id": "#/properties/meteringUnit",
+          "type": "string"
       },
       "meteringPrecision": {
-        "type": "number",
-        "minimum": 0,
-        "exclusiveMinimum": true
+          "$id": "#/properties/meteringPrecision",
+          "type": "number"
       }
-    },
-    "required": [
-      "id",
-      "assetID",
-      "creationDate",
-      "meteringLink",
-      "generalVC",
-      "meteringTimeFrame",
-      "meteringUnit",
-      "meteringPrecision"
-    ]
-  }
+  },
+  "additionalProperties": true
+}
