@@ -1,4 +1,3 @@
-import { Wallet } from "ethers";
 import * as vcjs from '@transmute/vc.js';
 import { EcdsaSecp256k1VerificationKey2019 } from '@bloomprotocol/ecdsa-secp256k1-verification-key-2019';
 import { EcdsaSecp256k1Signature2019 } from '@bloomprotocol/ecdsa-secp256k1-signature-2019';
@@ -14,12 +13,8 @@ import termsAndConditionsCredential from '../src/vc-schemas/TermsAndConditionsCr
 import basicCred from '../src/vc-schemas/BasicCred.json';
 import keyPair from './fixtures/keyPair.json';
 
-export const rootOwner = Wallet.createRandom();
 
-beforeAll(async () => {
-});
-
-describe("Issuance and verification tests", () => {
+xdescribe("Issuance and verification tests", () => {
   async function issueAndVerify(credential: object) {
     const vc = await vcjs.ld.createVerifiableCredential({
       credential,
@@ -28,7 +23,7 @@ describe("Issuance and verification tests", () => {
         key: EcdsaSecp256k1VerificationKey2019.from(keyPair.private),
       }),
     });
-    console.log(vc)
+    // console.log(vc)
     expect(vc.proof).toBeDefined();
     // TODO: expect that proof signer matches issuer of vc
     // TODO: test disabling @vocab to catch missing properties from context (schema.org has vocab)
@@ -37,7 +32,7 @@ describe("Issuance and verification tests", () => {
       documentLoader,
       suite: new EcdsaSecp256k1Signature2019()
     })
-    console.log(JSON.stringify(result))
+    // console.log(JSON.stringify(result))
     expect(result.verified).toBeTruthy();
   }
 

@@ -1,57 +1,31 @@
-import Ajv from "ajv"
+import Ajv, { Schema } from "ajv"
+import addFormats from "ajv-formats"
+import assetIDSchema from '../src/schema-def/AssetIDSchema.json';
+import assetIDCredential from '../src/vc-schemas/AssetIDCredential.json';
+import assetSpecSchema from '../src/schema-def/AssetSpecSchema.json';
+import assetSpecCredential from '../src/vc-schemas/AssetSpecCredential.json';
 import humanIdentitySchema from '../src/schema-def/HumanIdentitySchema.json';
 import companyIdentitySchema from '../src/schema-def/CompanyIdentitySchema.json';
 import timeSeriesSchema from '../src/schema-def/TimeSeriesSchema.json';
-import assetIDSchema from '../src/schema-def/AssetIDSchema.json';
-import assetSpecSchema from '../src/schema-def/AssetSpecSchema.json';
 import basicSchema from '../src/schema-def/BasicSchema.json';
 
 const ajv = new Ajv()
+addFormats(ajv)
 
-
-beforeAll(async () => {
-});
+const verifyCredentialSubjectSchema = (schema: Schema, credential: { credentialSubject: object }) => {
+    const validate = ajv.compile(schema)
+    const valid = validate(credential.credentialSubject)
+    expect(valid).toBeTruthy()
+}
 
 describe("Issuance and verification tests", () => {
-  const assetIdData = {
-    "id": "did:example:asset",
-    "assetID": "541453800000001269",
-    "address": "1234 Apple Street",
-    "meteringLink": {
-      "id": "abc/xyz/couldbeanything"
-    },
-    "specVC": {
-      "id": "https://elia.be/credential/2"
-    }
-  }
-
   
-  test("AsseID", async () => {
-    var validate = ajv.compile(assetIDSchema)
-    var valid = validate(assetIdData)
-    if (!valid) console.log(validate.errors)
+  test("AssetID Schema", async () => {
+    verifyCredentialSubjectSchema(assetIDSchema, assetIDCredential)
   });
 
-  const assetSpecData = {
-    "id": "did:example:asset",
-    "assetID": "541453800000001269",
-    "creationDate": 5000,
-    "meteringLink": {
-      "id": "<meteringLink URI>"
-    },
-    "generalVC": {
-      "id": "https://elia.be/credential/2"
-    },
-    "meteringTimeFrame": 2000,
-    "meteringUnit": "watts",
-    "meteringPrecision": 0.001
-  }
-
-  
   test("AssetSpec", async () => {
-    var validate = ajv.compile(assetSpecSchema)
-    var valid = validate(assetSpecData)
-    if (!valid) console.log(validate.errors)
+    verifyCredentialSubjectSchema(assetSpecSchema, assetSpecCredential)
   });
 
   const basicData = {

@@ -13,7 +13,8 @@
       },
       "creationDate": {
           "$id": "#/properties/creationDate",
-          "type": "integer"
+          "type": "string",
+          "format": "date"
       },
       "meteringLink": {
           "$id": "#/properties/meteringLink",
