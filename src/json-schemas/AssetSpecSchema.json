@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/assetSpec.json",
+  "type": "object",
+  "properties": {
+      "id": {
+          "$id": "#/properties/id",
+          "type": "string"
+      },
+      "assetID": {
+          "$id": "#/properties/assetID",
+          "type": "string"
+      },
+      "creationDate": {
+          "$id": "#/properties/creationDate",
+          "type": "string",
+          "format": "date"
+      },
+      "meteringLink": {
+          "$id": "#/properties/meteringLink",
+          "type": "object",
+          "required": [
+              "id"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/meteringLink/properties/id",
+                  "type": "string"
+              }
+          },
+          "additionalProperties": true
+      },
+      "generalVC": {
+          "$id": "#/properties/generalVC",
+          "type": "object",
+          "required": [
+              "id"
+          ],
+          "properties": {
+              "id": {
+                  "$id": "#/properties/generalVC/properties/id",
+                  "type": "string"
+              }
+          },
+          "additionalProperties": true
+      },
+      "meteringTimeFrame": {
+          "$id": "#/properties/meteringTimeFrame",
+          "type": "integer"
+      },
+      "meteringUnit": {
+          "$id": "#/properties/meteringUnit",
+          "type": "string"
+      },
+      "meteringPrecision": {
+          "$id": "#/properties/meteringPrecision",
+          "type": "number"
+      }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://elia.be/timeseriesschema.json",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "reading": {
+      "type": "object",
+      "properties": {
+        "timeStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timeEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "energy": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "timeStart",
+        "timeEnd",
+        "energy"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "reading"
+  ]
+}

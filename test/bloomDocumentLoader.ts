@@ -1,5 +1,5 @@
-import eliaContext from '../src/elia-context.json';
-import didDoc from './fixtures/didDocument.json';
+import eliaContext from '../src/elia-context.json'
+import didDoc from './fixtures/didDocument.json'
 import credentialsContextDoc from './fixtures/contexts/credentials-v1.json'
 import didContextDoc from './fixtures/contexts/did-v0.11.json'
 import secp256k12019ContextDoc from './fixtures/contexts/secp256k1-2019-v1.json'
@@ -17,7 +17,7 @@ const didDocMap: { [url: string]: Record<string, unknown> } = {
     'did:example:signer': didDoc,
 }
 
-export const documentLoader = (url: string) => {
+export const documentLoader = (url: string): { document: Record<string, unknown>, documentUrl: string } => {
     const withoutFragment = url.split('#')[0]
     const document = (withoutFragment.startsWith('did:') ? didDocMap : contextMap)[withoutFragment] || null
 

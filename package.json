@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "lint": "eslint \"**/*.ts\" --ignore-pattern node_modules/ --fix"
   },
   "author": "",
   "license": "ISC",
@@ -14,11 +15,15 @@
     "@bloomprotocol/ecdsa-secp256k1-verification-key-2019": "^0.1.2",
     "@transmute/jsonld-document-loader": "^0.2.0",
     "@transmute/vc.js": "^0.7.0-unstable.5",
-    "ethers": "^5.4.1",
+    "ajv": "8.6.2",
+    "ajv-formats": "^2.1.0",
     "patch-package": "^6.4.7"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "eslint": "^7.31.0",
     "jest": "^27.0.6",
     "ts-jest": "^27.0.4",
     "typescript": "^4.3.5"
