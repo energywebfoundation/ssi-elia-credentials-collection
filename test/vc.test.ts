@@ -23,16 +23,15 @@ describe("Issuance and verification tests", () => {
         key: EcdsaSecp256k1VerificationKey2019.from(keyPair.private),
       }),
     })
-    // console.log(vc)
     expect(vc.proof).toBeDefined()
-    // TODO: expect that proof signer matches issuer of vc
-    // TODO: test disabling @vocab to catch missing properties from context (schema.org has vocab)
     const result = await vcjs.ld.verifyVerifiableCredential({
-      credential: vc,
+      credential: {
+        ...vc,
+        issuer: { id: keyPair.private.controller }, // make sure issuer is set correctly
+      },
       documentLoader,
       suite: new EcdsaSecp256k1Signature2019()
     })
-    // console.log(JSON.stringify(result))
     expect(result.verified).toBeTruthy()
   }
 
