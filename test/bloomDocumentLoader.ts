@@ -1,4 +1,4 @@
-import eliaContext from '../src/elia-context.json'
+import eliaContext from '../credentials/2021-07-exchange-of-enegy-blocks/elia-context.json'
 import didDoc from './fixtures/didDocument.json'
 import credentialsContextDoc from './fixtures/contexts/credentials-v1.json'
 import didContextDoc from './fixtures/contexts/did-v0.11.json'
