@@ -1,11 +1,9 @@
 import * as vcjs from '@transmute/vc.js'
 import { EcdsaSecp256k1VerificationKey2019 } from '@bloomprotocol/ecdsa-secp256k1-verification-key-2019'
 import { EcdsaSecp256k1Signature2019 } from '@bloomprotocol/ecdsa-secp256k1-signature-2019'
-//import { documentLoader } from './document-loader';
-import { documentLoader } from './bloomDocumentLoader'
 import keyPair from './fixtures/keyPair.json'
 
-export async function issueAndVerify(credential: Record<string, unknown>): Promise<void> {
+export async function issueAndVerify(credential: Record<string, unknown>, documentLoader: any): Promise<void> {
   const vc = await vcjs.ld.createVerifiableCredential({
     credential,
     documentLoader,
