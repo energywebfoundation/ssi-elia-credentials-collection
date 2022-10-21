@@ -1,32 +1,40 @@
-import {
-  documentLoaderFactory,
-  contexts,
-} from '@transmute/jsonld-document-loader'
-import eliaContext from '../src/elia-context.json'
+import eliaContext from '../credentials/2021-07-exchange-of-enegy-blocks/elia-context.json'
 import didDoc from './fixtures/didDocument.json'
+import credentialsContextDoc from './fixtures/contexts/credentials-v1.json'
+import didContextDoc from './fixtures/contexts/did-v0.11.json'
 import secp256k12019ContextDoc from './fixtures/contexts/secp256k1-2019-v1.json'
 import schemaContextDoc from './fixtures/contexts/schema.json'
-import { IContextMap } from '@transmute/jsonld-document-loader/dist/types'
+import { JsonLd, RemoteDocument } from 'jsonld/jsonld-spec'
 
-const additionalContexts: IContextMap = {
-  "https://vc-context.elia.be/2021/v1/": eliaContext,
-  'https://ns.did.ai/suites/secp256k1-2019/v1': secp256k12019ContextDoc,
-  'http://schema.org': schemaContextDoc
+export const baseContextMap: { [url: string]: JsonLd } = {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    'https://www.w3.org/2018/credentials/v1': credentialsContextDoc,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    'https://w3id.org/did/v0.11': didContextDoc,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    'https://ns.did.ai/suites/secp256k1-2019/v1': secp256k12019ContextDoc,
+    'http://schema.org': schemaContextDoc,
+    'https://vc-context.elia.be/2021/v1': eliaContext,
 }
 
-export const documentLoader = documentLoaderFactory.pluginFactory
-  .build({
-    contexts: {
-      ...contexts.W3C_Verifiable_Credentials,
-      ...contexts.W3ID_Security_Vocabulary,
-      ...contexts.W3C_Decentralized_Identifiers,
-      ...additionalContexts
-    },
-  })
-  .addResolver({
-    ['did:example:signer']: {
-      resolve: () => {
-        return Promise.resolve(didDoc)
-      },
-    },
-  })
+const didDocMap: { [url: string]: JsonLd } = {
+    'did:example:signer': didDoc,
+}
+
+/**
+ * A document loader usable by the Transmute libraries 
+ */
+ export const documentLoader = (url: string): Promise<RemoteDocument> => {
+    const withoutFragment = url.split('#')[0]
+    const document: JsonLd = (withoutFragment.startsWith('did:') ? didDocMap : baseContextMap)[withoutFragment] || null
+
+    if (document === null) console.log({ url, withoutFragment })
+
+    return Promise.resolve({
+        document,
+        documentUrl: url,
+    })
+}
