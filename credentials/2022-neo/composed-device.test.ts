@@ -43,6 +43,11 @@ describe("Compose Device", () => {
       "https://vc-context.elia.be/2022/v1/maximumVoltageConsumption": 20,
       "https://vc-context.elia.be/2022/v1/nominalCurrentConsumption": 10,
       "https://vc-context.elia.be/2022/v1/nominalVoltageConsumption": 10,
+      "https://vc-context.elia.be/2022/v1/maximumActivePowerConsumption": 40,
+      "https://vc-context.elia.be/2022/v1/maximumReactivePowerConsumption": 40,
+      "https://vc-context.elia.be/2022/v1/nominalActivePowerConsumption": 40,
+      "https://vc-context.elia.be/2022/v1/nominalReactivePowerConsumption": 40,
+      "https://vc-context.elia.be/2022/v1/marginalConsumptionCosts": 5
     }
     expect(expected).toMatchObject(framed)
   })
