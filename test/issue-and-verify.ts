@@ -4,8 +4,10 @@ import { EcdsaSecp256k1Signature2019 } from '@bloomprotocol/ecdsa-secp256k1-sign
 import keyPair from './fixtures/keyPair.json'
 
 export async function issueAndVerify(credential: Record<string, unknown>, documentLoader: any): Promise<void> {
+  // copying because issuance is mutating the credential
+  const credentialCopy = JSON.parse(JSON.stringify(credential))
   const vc = await vcjs.ld.createVerifiableCredential({
-    credential,
+    credential: credentialCopy,
     documentLoader,
     suite: new EcdsaSecp256k1Signature2019({
       key: EcdsaSecp256k1VerificationKey2019.from(keyPair.private),
