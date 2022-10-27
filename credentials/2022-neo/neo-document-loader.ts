@@ -1,9 +1,13 @@
 import didDoc from '../../test/fixtures/didDocument.json'
 import neoContext from './elia-neo-context.json'
+import consumptionAssessmentContext from './consumption-assessment/consumption-assessment-context.json'
 import { JsonLd, RemoteDocument } from 'jsonld/jsonld-spec'
 import { baseContextMap } from '../../test/document-loader'
 
-const contextMap = Object.assign({'https://vc-context.elia.be/2022/v1': neoContext} , baseContextMap)
+const contextMap = Object.assign({
+    'https://vc-context.elia.be/2022/v1': neoContext,
+    'https://vc-context.elia.be/2022/v1/consumption-assessment': consumptionAssessmentContext
+} , baseContextMap)
 
 const didDocMap: { [url: string]: JsonLd } = {
     'did:example:signer': didDoc,
