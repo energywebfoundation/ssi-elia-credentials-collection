@@ -3,6 +3,7 @@ import consumptionAssessmentContext from './consumption-assessment/consumption-a
 import deviceInfoContext from './device-info/device-info-context.json'
 import deviceLocationContext from './device-location/device-location-context.json'
 import energyStorageContext from './energy-storage/energy-storage-context.json'
+import meteringCapableDeviceContext from './metering-capable-device/metering-capable-device-context.json'
 import { JsonLd, RemoteDocument } from 'jsonld/jsonld-spec'
 import { baseContextMap } from '../../test/document-loader'
 
@@ -11,6 +12,7 @@ const contextMap = Object.assign({
     'https://vc-context.elia.be/2022/v1/device-info': deviceInfoContext,
     'https://vc-context.elia.be/2022/v1/device-location': deviceLocationContext,
     'https://vc-context.elia.be/2022/v1/energy-storage': energyStorageContext,
+    'https://vc-context.elia.be/2022/v1/metering-capable-device': meteringCapableDeviceContext,
 } , baseContextMap)
 
 const didDocMap: { [url: string]: JsonLd } = {
