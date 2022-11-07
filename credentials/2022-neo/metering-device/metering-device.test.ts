@@ -1,5 +1,5 @@
 import { Options, compact } from 'jsonld'
-import credential from './metering-capable-device-credential.json'
+import credential from './metering-device-credential.json'
 import { issueAndVerify } from '../../../test/issue-and-verify'
 import { digitalBazaarDocumentLoader, transmuteDocumentLoader } from '../neo-document-loader'
 
