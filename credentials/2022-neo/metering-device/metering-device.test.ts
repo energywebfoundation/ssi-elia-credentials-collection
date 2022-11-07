@@ -28,6 +28,9 @@ describe("Energy Storage", () => {
         "@type": "https://vc-context.elia.be/2022/v1/MeteringCapableDevice",
         "https://saref.etsi.org/core/hasFunction": {
           "@type": "https://saref.etsi.org/core/MeteringFunction",
+          "https://saref.etsi.org/core/hasMeterReadingType": {
+            "@type": "https://vc-context.elia.be/2022/v1/Current",
+          },
         },
         "https://vc-context.elia.be/2022/v1/areDataAggregated": true,
         "https://vc-context.elia.be/2022/v1/numSecondsOfAggregation": 60,
