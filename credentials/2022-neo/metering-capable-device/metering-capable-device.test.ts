@@ -26,8 +26,10 @@ describe("Energy Storage", () => {
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@id": "deviceIdScheme:123",
         "@type": "https://vc-context.elia.be/2022/v1/MeteringCapableDevice",
+        "https://saref.etsi.org/core/hasFunction": {
+          "@type": "https://saref.etsi.org/core/MeteringFunction",
+        },
         "https://vc-context.elia.be/2022/v1/areDataAggregated": true,
-        "https://vc-context.elia.be/2022/v1/capableOfMetering": true,
         "https://vc-context.elia.be/2022/v1/numSecondsOfAggregation": 60,
         "https://vc-context.elia.be/2022/v1/precisionClassOfMeter": "precise",
         "https://vc-context.elia.be/2022/v1/typeOfMetering": "voltage",
