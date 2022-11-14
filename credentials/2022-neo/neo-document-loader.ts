@@ -1,5 +1,5 @@
 import didDoc from '../../test/fixtures/didDocument.json'
-import consumptionAssessmentContext from './consumption-assessment/consumption-assessment-context.json'
+import consumptionContext from './consumption/consumption-context.json'
 import deviceInfoContext from './device-info/device-info-context.json'
 import deviceLocationContext from './device-location/device-location-context.json'
 import energyStorageContext from './energy-storage/energy-storage-context.json'
@@ -8,7 +8,7 @@ import { JsonLd, RemoteDocument } from 'jsonld/jsonld-spec'
 import { baseContextMap } from '../../test/document-loader'
 
 const contextMap = Object.assign({
-    'https://vc-context.elia.be/2022/v1/consumption-assessment': consumptionAssessmentContext,
+    'https://vc-context.elia.be/2022/v1/consumption-': consumptionContext,
     'https://vc-context.elia.be/2022/v1/device-info': deviceInfoContext,
     'https://vc-context.elia.be/2022/v1/device-location': deviceLocationContext,
     'https://vc-context.elia.be/2022/v1/energy-storage': energyStorageContext,

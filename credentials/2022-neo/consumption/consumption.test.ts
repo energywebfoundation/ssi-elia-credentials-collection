@@ -1,9 +1,9 @@
 import { Options, compact } from 'jsonld'
-import credential from './consumption-assessment-credential.json'
+import credential from './consumption-credential.json'
 import { issueAndVerify } from '../../../test/issue-and-verify'
 import { digitalBazaarDocumentLoader, transmuteDocumentLoader } from '../neo-document-loader'
 
-describe("Consumption Assessment", () => {
+describe("Consumption ", () => {
   // test("Credential should match JSON Schema", async () => {
   //   verifyCredentialSubjectSchema(schema, credential)
   // })
@@ -21,11 +21,11 @@ describe("Consumption Assessment", () => {
       "@id": "some URI, e.g. https://installer.example.com/credential/1",
       "@type": [
         "https://www.w3.org/2018/credentials#VerifiableCredential",
-        "https://vc-context.elia.be/2022/v1/PowerConsumingDeviceAssessmentCredential",
+        "https://vc-context.elia.be/2022/v1/PowerConsumingDeviceCredential",
       ],
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@id": "deviceIdScheme:123",
-        "@type": "https://vc-context.elia.be/2022/v1/AssessedPowerConsumingDevice",
+        "@type": "https://vc-context.elia.be/2022/v1/PowerConsumingDevice",
         "https://saref.etsi.org/saref4ener/powerSource": "mains3Phase",
         "https://vc-context.elia.be/2022/v1/cutoffFrequencyConsumption": 15,
         "https://vc-context.elia.be/2022/v1/cutoffVoltageConsumption": [

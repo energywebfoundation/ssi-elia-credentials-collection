@@ -2,22 +2,22 @@ import * as jsonld from 'jsonld'
 import { digitalBazaarDocumentLoader } from './neo-document-loader'
 import deviceInfoCredential from './device-info/device-info-credential.json'
 import deviceLocationCredential from './device-location/device-location-credential.json'
-import consumptionAssessmentCredential from './consumption-assessment/consumption-assessment-credential.json'
+import consumptionCredential from './consumption/consumption-credential.json'
 
 describe("Compose Device", () => {
 
-  test("Combine device-info and power assessment credentials", async () => {
+  test("Combine device-info and power  credentials", async () => {
     const options: jsonld.Options.Compact = {
       documentLoader: digitalBazaarDocumentLoader
     }
     const expandedDeviceInfo = await jsonld.compact(deviceInfoCredential, {}, options)
-    const expandedConsumptionAssessment = await jsonld.compact(consumptionAssessmentCredential, {}, options)
+    const expandedConsumption = await jsonld.compact(consumptionCredential, {}, options)
     const doc = {
       "@context": {
       },
       "@graph": [
         expandedDeviceInfo,
-        expandedConsumptionAssessment
+        expandedConsumption
       ]
     }
     const frameObject = {
@@ -28,7 +28,7 @@ describe("Compose Device", () => {
       "@id": "deviceIdScheme:123",
       "@type": [
         "https://saref.etsi.org/saref4ener/Device",
-        "https://vc-context.elia.be/2022/v1/AssessedPowerConsumingDevice",
+        "https://vc-context.elia.be/2022/v1/PowerConsumingDevice",
       ],
       "https://saref.etsi.org/saref4ener/brandName": "Device Manufacturer Inc",
       "https://saref.etsi.org/saref4ener/deviceCode": "device 123",
