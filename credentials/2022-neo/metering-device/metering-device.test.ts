@@ -3,7 +3,7 @@ import credential from './metering-device-credential.json'
 import { issueAndVerify } from '../../../test/issue-and-verify'
 import { digitalBazaarDocumentLoader, transmuteDocumentLoader } from '../neo-document-loader'
 
-describe("Energy Storage", () => {
+describe("MeteringDevice", () => {
   // test("Credential should match JSON Schema", async () => {
   //   verifyCredentialSubjectSchema(schema, credential)
   // })
