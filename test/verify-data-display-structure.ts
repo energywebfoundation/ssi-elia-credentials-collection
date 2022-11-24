@@ -4,9 +4,9 @@ import addFormats from "ajv-formats"
 const ajv = new Ajv()
 addFormats(ajv)
 
-export const verifyDataDisplayStructure = (dataDisplay: { properties: Record<string, unknown>[] }): void => {
+export const verifyDataDisplayStructure = (dataDisplayApplication: { dataTypeIRI: string, dataDisplay: { properties: Record<string, unknown>[] }}): void => {
   const validate = ajv.compile(labeledDisplayMappingObjectSchema)
-  dataDisplay.properties.forEach(property => {
+  dataDisplayApplication.dataDisplay.properties.forEach(property => {
     const valid = validate(property)
     expect(valid).toBeTruthy()
   })
