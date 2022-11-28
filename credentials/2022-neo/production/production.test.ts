@@ -3,7 +3,7 @@ import credential from './production-credential.json'
 import { issueAndVerify } from '../../../test/issue-and-verify'
 import { digitalBazaarDocumentLoader, transmuteDocumentLoader } from '../neo-document-loader'
 
-describe("Consumption ", () => {
+describe("Production ", () => {
   // test("Credential should match JSON Schema", async () => {
   //   verifyCredentialSubjectSchema(schema, credential)
   // })
