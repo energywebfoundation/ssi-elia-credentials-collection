@@ -25,13 +25,11 @@ describe("Energy Location", () => {
       ],
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@type": "https://vc-context.elia.be/2022/v1/EnergyLocation",
-        "https://vc-context.elia.be/2022/v1/HeadMeter": {
-          "@type": "https://vc-context.elia.be/2022/v1/HeadMeter",
-          "https://vc-context.elia.be/2022/v1/eanCode": "5464531654654",
+        "https://vc-context.elia.be/2022/v1/headMeter": {
+          "@type": "https://vc-context.elia.be/2022/v1/ean",
           "https://vc-context.elia.be/2022/v1/idCountry": "BE",
           "https://vc-context.elia.be/2022/v1/meterId": "65431654"
         },
-        "https://vc-context.elia.be/2022/v1/localIdentificationMethodOfHeadMeter": "<some location id>"
       },
       "https://www.w3.org/2018/credentials#issuanceDate": {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
