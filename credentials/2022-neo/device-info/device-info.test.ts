@@ -1,7 +1,9 @@
 import { Options, compact } from 'jsonld'
 import credential from './device-info-credential.json'
+import dataDisplay from './device-info-data-display.json'
 import { issueAndVerify } from '../../../test/issue-and-verify'
 import { digitalBazaarDocumentLoader, transmuteDocumentLoader } from '../neo-document-loader'
+import { verifyDataDisplayStructure } from '../../../test/verify-data-display-structure'
 
 describe("Device Info", () => {
   // test("Credential should match JSON Schema", async () => {
@@ -42,5 +44,9 @@ describe("Device Info", () => {
       },
     }
     expect(compacted).toEqual(expected)
+  })
+
+  test("Data display conforms to JSON schema", async () => {
+    verifyDataDisplayStructure(dataDisplay)
   })
 })
