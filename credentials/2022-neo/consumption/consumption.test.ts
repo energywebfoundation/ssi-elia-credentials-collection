@@ -21,34 +21,29 @@ describe("Consumption ", () => {
       "@id": "some URI, e.g. https://installer.example.com/credential/1",
       "@type": [
         "https://www.w3.org/2018/credentials#VerifiableCredential",
-        "https://vc-context.elia.be/2022/v1/PowerConsumingDeviceCredential",
+        "https://vc-context.elia.be/2022/v1/PowerConsumingDeviceCredential"
       ],
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@id": "deviceIdScheme:123",
         "@type": "https://vc-context.elia.be/2022/v1/PowerConsumingDevice",
         "https://saref.etsi.org/saref4ener/powerSource": "mains3Phase",
+        "https://vc-context.elia.be/2022/v1/cosPhi": 0.9,
         "https://vc-context.elia.be/2022/v1/cutoffFrequencyConsumption": 15,
-        "https://vc-context.elia.be/2022/v1/cutoffVoltageConsumption": [
-          30,
-          30,
-        ],
         "https://vc-context.elia.be/2022/v1/marginalConsumptionCosts": 5,
-        "https://vc-context.elia.be/2022/v1/maximumActivePowerConsumption": 40,
         "https://vc-context.elia.be/2022/v1/maximumCurrentConsumption": 20,
-        "https://vc-context.elia.be/2022/v1/maximumReactivePowerConsumption": 40,
+        "https://vc-context.elia.be/2022/v1/maximumPowerConsumption": 40,
         "https://vc-context.elia.be/2022/v1/maximumVoltageConsumption": 20,
-        "https://vc-context.elia.be/2022/v1/nominalActivePowerConsumption": 40,
         "https://vc-context.elia.be/2022/v1/nominalCurrentConsumption": 10,
-        "https://vc-context.elia.be/2022/v1/nominalReactivePowerConsumption": 40,
-        "https://vc-context.elia.be/2022/v1/nominalVoltageConsumption": 10,
+        "https://vc-context.elia.be/2022/v1/nominalPowerConsumption": 40,
+        "https://vc-context.elia.be/2022/v1/nominalVoltageConsumption": 10
       },
       "https://www.w3.org/2018/credentials#issuanceDate": {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2021-05-14T12:55:30Z",
+        "@value": "2021-05-14T12:55:30Z"
       },
       "https://www.w3.org/2018/credentials#issuer": {
-        "@id": "did:example:dso",
-      },
+        "@id": "did:example:dso"
+      }
     }
     expect(compacted).toEqual(expected)
   })
