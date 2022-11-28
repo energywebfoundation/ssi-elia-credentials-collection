@@ -27,7 +27,13 @@ describe("Energy Storage", () => {
         "@id": "deviceIdScheme:123",
         "@type": "https://vc-context.elia.be/2022/v1/EnergyStorageDevice",
         "https://vc-context.elia.be/2022/v1/annualizedWarrantyCapacity": 10,
+        "https://vc-context.elia.be/2022/v1/bmsFeedbackLoopAvailable": true,
+        "https://vc-context.elia.be/2022/v1/cRateAllowed": "0.5C",
         "https://vc-context.elia.be/2022/v1/capacityTotalTheoretical": 10,
+        "https://vc-context.elia.be/2022/v1/cellChemistry": [
+          "chemical1",
+          "chemical2",
+        ],
         "https://vc-context.elia.be/2022/v1/depthOfDischarge": 10,
       },
       "https://www.w3.org/2018/credentials#issuanceDate": {
