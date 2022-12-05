@@ -6,7 +6,7 @@ import consumptionCredential from './consumption/consumption-credential.json'
 
 describe("Compose Device", () => {
 
-  test("Combine device-info and power  credentials", async () => {
+  test("Combine device-info and power credentials", async () => {
     const options: jsonld.Options.Compact = {
       documentLoader: digitalBazaarDocumentLoader
     }
@@ -37,17 +37,15 @@ describe("Compose Device", () => {
       "https://saref.etsi.org/saref4ener/manufacturerDescription": "A next-gen washing machine",
       "https://saref.etsi.org/saref4ener/manufacturerLabel": "WM-3000",
       "https://saref.etsi.org/saref4ener/powerSource": "mains3Phase",
+      "https://vc-context.elia.be/2022/v1/cosPhi": 0.9,
       "https://vc-context.elia.be/2022/v1/cutoffFrequencyConsumption": 15,
-      "https://vc-context.elia.be/2022/v1/cutoffVoltageConsumption": 30,
+      "https://vc-context.elia.be/2022/v1/marginalConsumptionCosts": 5,
       "https://vc-context.elia.be/2022/v1/maximumCurrentConsumption": 20,
+      "https://vc-context.elia.be/2022/v1/maximumPowerConsumption": 40,
       "https://vc-context.elia.be/2022/v1/maximumVoltageConsumption": 20,
       "https://vc-context.elia.be/2022/v1/nominalCurrentConsumption": 10,
+      "https://vc-context.elia.be/2022/v1/nominalPowerConsumption": 40,
       "https://vc-context.elia.be/2022/v1/nominalVoltageConsumption": 10,
-      "https://vc-context.elia.be/2022/v1/maximumActivePowerConsumption": 40,
-      "https://vc-context.elia.be/2022/v1/maximumReactivePowerConsumption": 40,
-      "https://vc-context.elia.be/2022/v1/nominalActivePowerConsumption": 40,
-      "https://vc-context.elia.be/2022/v1/nominalReactivePowerConsumption": 40,
-      "https://vc-context.elia.be/2022/v1/marginalConsumptionCosts": 5
     }
     expect(expected).toMatchObject(framed)
   })
