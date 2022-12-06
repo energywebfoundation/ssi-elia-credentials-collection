@@ -6,6 +6,7 @@ import energyLocationContext from './energy-location/energy-location-context.jso
 import energyStorageContext from './energy-storage/energy-storage-context.json'
 import meteringDeviceContext from './metering-device/metering-device-context.json'
 import productionContext from './production/production-context.json'
+import steeringListContext from './steering-list/steering-list-context.json'
 import { JsonLd, RemoteDocument } from 'jsonld/jsonld-spec'
 import { baseContextMap } from '../../test/document-loader'
 
@@ -17,6 +18,7 @@ const contextMap = Object.assign({
     'https://vc-context.elia.be/2022/v1/energy-storage': energyStorageContext,
     'https://vc-context.elia.be/2022/v1/metering-device': meteringDeviceContext,
     'https://vc-context.elia.be/2022/v1/production': productionContext,
+    'https://vc-context.elia.be/2022/v1/steering-list': steeringListContext,
 } , baseContextMap)
 
 const didDocMap: { [url: string]: JsonLd } = {
