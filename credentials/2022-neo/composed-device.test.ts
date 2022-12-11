@@ -27,7 +27,7 @@ describe("Compose Device", () => {
     const expected = {
       "@id": "deviceIdScheme:123",
       "@type": [
-        "https://saref.etsi.org/saref4ener/Device",
+        "https://vc-context.elia.be/2022/v1/Device",
         "https://vc-context.elia.be/2022/v1/PowerConsumingDevice",
       ],
       "https://saref.etsi.org/saref4ener/brandName": "Device Manufacturer Inc",
@@ -71,7 +71,7 @@ describe("Compose Device", () => {
     const expected = {
       "@id": "deviceIdScheme:123",
       "@type": [
-        "https://saref.etsi.org/saref4ener/Device",
+        "https://vc-context.elia.be/2022/v1/Device",
         "https://vc-context.elia.be/2022/v1/LocatedDevice",
       ],
       "http://schema.org/address": {
