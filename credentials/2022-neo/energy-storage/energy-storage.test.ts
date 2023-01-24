@@ -1,5 +1,6 @@
 import { Options, compact } from 'jsonld'
 import credential from './energy-storage-credential.json'
+import vocabCredential from './energy-storage-credential-vocab.json'
 import { issueAndVerify } from '../../../test/issue-and-verify'
 import { digitalBazaarDocumentLoader, transmuteDocumentLoader } from '../neo-document-loader'
 
@@ -46,4 +47,13 @@ describe("Energy Storage", () => {
     }
     expect(compacted).toEqual(expected)
   })
+})
+
+test("Explicit context credential is the same as vocab", async () => {
+  const options: Options.Compact = {
+    documentLoader: digitalBazaarDocumentLoader
+  }
+  const compactedCredential = await compact(credential, {}, options)
+  const compactedVocabCredential = await compact(vocabCredential, {}, options)
+  expect(compactedCredential).toEqual(compactedVocabCredential)
 })

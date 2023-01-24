@@ -4,6 +4,7 @@ import deviceInfoContext from './device-info/device-info-context.json'
 import deviceLocationContext from './device-location/device-location-context.json'
 import energyLocationContext from './energy-location/energy-location-context.json'
 import energyStorageContext from './energy-storage/energy-storage-context.json'
+import energyStorageContextVocab from './energy-storage/energy-storage-context-vocab.json'
 import meteringDeviceContext from './metering-device/metering-device-context.json'
 import productionContext from './production/production-context.json'
 import steeringListContext from './steering-list/steering-list-context.json'
@@ -16,6 +17,7 @@ const contextMap = Object.assign({
     'https://vc-context.elia.be/2022/v1/device-location': deviceLocationContext,
     'https://vc-context.elia.be/2022/v1/energy-location': energyLocationContext,
     'https://vc-context.elia.be/2022/v1/energy-storage': energyStorageContext,
+    'https://vc-context.elia.be/2022/v1/energy-storage-vocab': energyStorageContextVocab,
     'https://vc-context.elia.be/2022/v1/metering-device': meteringDeviceContext,
     'https://vc-context.elia.be/2022/v1/production': productionContext,
     'https://vc-context.elia.be/2022/v1/steering-list': steeringListContext,
