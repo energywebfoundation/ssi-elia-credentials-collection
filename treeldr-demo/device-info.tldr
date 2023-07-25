@@ -1,0 +1,11 @@
+base <https://vc-context.elia.be/2022/v1/>;
+use <http://www.w3.org/2001/XMLSchema#> as xs;
+use <https://saref.etsi.org/saref4ener/> as saref4ener;
+
+property saref4ener:brandName: xs:string;
+property saref4ener:deviceCode: xs:string;
+
+type Device {
+  saref4ener:brandName,
+  saref4ener:deviceCode
+}
