@@ -1,11 +1,18 @@
 base <https://vc-context.elia.be/2022/v1/>;
+use <https://vc-context.elia.be/2022/v1/> as elia;
 use <http://www.w3.org/2001/XMLSchema#> as xs;
 use <https://saref.etsi.org/saref4ener/> as saref4ener;
+use <https://www.w3.org/2018/credentials#> as vc;
 
 property saref4ener:brandName: xs:string;
 property saref4ener:deviceCode: xs:string;
+property elia:Device: Device;
 
 type Device {
   saref4ener:brandName,
   saref4ener:deviceCode
+}
+
+type DeviceInfoCredential {
+  elia:Device
 }
