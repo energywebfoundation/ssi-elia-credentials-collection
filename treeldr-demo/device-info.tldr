@@ -2,7 +2,7 @@ base <https://vc-context.elia.be/2022/v1/>;
 use <https://vc-context.elia.be/2022/v1/> as elia;
 use <http://www.w3.org/2001/XMLSchema#> as xs;
 use <https://saref.etsi.org/saref4ener/> as saref4ener;
-use <https://www.w3.org/2018/credentials#> as vc;
+use <https://www.w3.org/2018/credentials#> as cred;
 
 property saref4ener:brandName: xs:string;
 property saref4ener:deviceCode: xs:string;
@@ -13,6 +13,12 @@ type Device {
   saref4ener:deviceCode
 }
 
+// tldrc -i device-info.tldr json-schema https://vc-context.elia.be/2022/v1/DeviceInfoCredential
 type DeviceInfoCredential {
   elia:Device
 }
+
+type cred:VerifiableCredential {
+}
+
+type DeviceInfoVC = DeviceInfoCredential | cred:VerifiableCredential;
