@@ -48,6 +48,11 @@ tldrc -i device-info.tldr json-ld-context https://vc-context.elia.be/2022/v1/Dev
 3. Compose the properties into a TreeLDR Type to be used as the `credentialSubject`
 4. Compose a new credential type from the `credentialSubject` type and a credentialType (TBD if this is possible, see https://www.sprucekit.dev/treeldr/treeldr-basics/syntax#composite-types) 
 
+Possible CLI steps for credential creation to automate the above steps:
+1. Define a TreeLDR type for the credential subject
+2. Compile the TreeLDR to to JSON-LD context -> this goes in the `@context` array of the credential 
+3. Ask for the IRI of the credential type -> this goes in the credential type array
+
 
 # Types of files
 
