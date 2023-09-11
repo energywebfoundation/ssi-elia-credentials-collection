@@ -1,0 +1,23 @@
+base <https://example.com/>;
+use <http://www.w3.org/2001/XMLSchema#> as xs;
+
+/// Blog user.
+type User {
+	/// Unique email identifier.
+	email: required xs:string,
+
+	/// Name of the user.
+	name: xs:string,
+
+	/// Birth date of the user.
+	birthDate: xs:date
+}
+
+/// Blog post.
+type BlogPost {
+	/// Title.
+	title: required xs:string,
+
+	/// Post content.
+	content: required xs:string
+}

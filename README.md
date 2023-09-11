@@ -16,6 +16,44 @@ npm i
 npm test
 ```
 
+## TreeLDR
+
+From [TreeLDR documentation](https://www.sprucekit.dev/treeldr/treeldr):
+> TreeLDR is a schema definition language that aims at describing both the structure and semantics of the defined schema in a comprehensible way.
+> It lies at the intersection between RDF (and its various schema definition ontologies such as OWL) and structure-oriented schema definition frameworks such as JSON Schema or IPLD.
+
+To use TreeLDR:
+
+1. Install as described [here](https://www.sprucekit.dev/treeldr/treeldr-quickstart#installation)
+
+2. Navigate to the `treeldr-demo` directory
+```
+cd treeldr-demo
+```
+
+3. Run the TreeLDR CLI to compile the TreeLDR schema to JSON Schema
+```
+tldrc -i device-info.tldr json-schema https://vc-context.elia.be/2022/v1/Device
+```
+
+4. Run the TreeLDR CLI to compile the TreeLDR schema to JSON-LD
+```
+tldrc -i device-info.tldr json-ld-context https://vc-context.elia.be/2022/v1/Device
+```
+
+### How TreeLDR could be use to define credentials
+
+1. Create a new file for the credential
+2. If necessary, define new properties by selecting IRI from an RDF ontology and adding structure schema type (e.g. `string`, `number`, `boolean`, `array`, `object`)
+3. Compose the properties into a TreeLDR Type to be used as the `credentialSubject`
+4. Compose a new credential type from the `credentialSubject` type and a credentialType (TBD if this is possible, see https://www.sprucekit.dev/treeldr/treeldr-basics/syntax#composite-types) 
+
+Possible CLI steps for credential creation to automate the above steps:
+1. Define a TreeLDR type for the credential subject
+2. Compile the TreeLDR to to JSON-LD context -> this goes in the `@context` array of the credential 
+3. Ask for the IRI of the credential type -> this goes in the credential type array
+
+
 # Types of files
 
 ## Linked Data Context

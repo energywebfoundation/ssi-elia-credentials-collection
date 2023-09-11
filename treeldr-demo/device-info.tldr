@@ -1,0 +1,13 @@
+base <https://vc-context.elia.be/2022/v1/>;
+use <http://www.w3.org/2001/XMLSchema#> as xs;
+use <https://saref.etsi.org/saref4ener/> as saref4ener;
+
+property saref4ener:brandName: xs:string;
+property saref4ener:deviceCode: xs:string;
+
+// tldrc -i device-info.tldr json-ld-context https://vc-context.elia.be/2022/v1/Device
+// tldrc -i device-info.tldr json-schema https://vc-context.elia.be/2022/v1/Device
+type Device {
+  saref4ener:brandName,
+  saref4ener:deviceCode
+}
