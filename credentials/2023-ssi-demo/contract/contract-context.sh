@@ -27,7 +27,7 @@ append_to_json() {
     jq ". += [$result]" "$OUTPUT_FILE" > "$tmp" && mv "$tmp" "$OUTPUT_FILE"
 }
 
-# Example commands to run
+# Commands to run
 COMMANDS=(
   "tldrc -i contract.tldr json-ld-context https://vc-context.elia.be/2022/v1/Contract"
   "tldrc -i contract.tldr json-ld-context https://schema.org/Organization"
