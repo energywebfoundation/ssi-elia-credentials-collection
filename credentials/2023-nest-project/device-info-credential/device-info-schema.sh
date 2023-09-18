@@ -2,7 +2,7 @@
 
 # Commands to run
 COMMANDS=(
-  "tldrc -i contract.tldr json-schema https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Device"
+  "tldrc -i device-info.tldr json-schema https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Device"
 )
 
 FILES=(

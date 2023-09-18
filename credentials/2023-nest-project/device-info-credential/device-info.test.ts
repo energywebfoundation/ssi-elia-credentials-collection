@@ -1,7 +1,7 @@
 import { Options, compact } from "jsonld"
-import credential from "./contract-credential.json"
+import credential from "./device-info-credential.json"
 // import dataDisplay from "./device-info-data-display.json"
-import schema from "./schemas/contract-schema.json"
+import schema from "./schemas/device-schema.json"
 import { issueAndVerify } from "../../../test/issue-and-verify"
 import {
   digitalBazaarDocumentLoader,
@@ -10,7 +10,7 @@ import {
 // import { verifyDataDisplayStructure } from "../../../test/verify-data-display-structure"
 import { verifyCredentialSubjectSchema } from "../../../test/verify-credential-subject-schema"
 
-describe("Contract", () => {
+describe("Device-Info", () => {
   test("Credential should match JSON Schema", async () => {
     verifyCredentialSubjectSchema(schema, credential)
   })
