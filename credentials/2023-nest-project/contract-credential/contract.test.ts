@@ -33,21 +33,21 @@ describe("Contract", () => {
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@id": "contractIdScheme:456",
         "@type": "Contract",
-        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/applicationLaw":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/applicationLaw":
           "Belgium laws",
-        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/compensationOfTheOffer":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/compensationOfTheOffer":
           "0",
-        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/contractedItem":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/contractedItem":
           {
             "@id": "deviceIdScheme:123",
             "@type":
               "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/credentials/2023-nest-project/Device",
           },
-        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/expressionOfTheOffer":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/expressionOfTheOffer":
           "Lorem ipsum, ...",
-        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/jurisdiction":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/jurisdiction":
           "Courts of Bruxelles",
-        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/party1":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/party1":
           {
             "@type": "https://schema.org/Organization",
             "https://schema.org/address":
@@ -55,7 +55,7 @@ describe("Contract", () => {
             "https://schema.org/brand": "Car Manufacturer Inc",
             "https://schema.org/iso6523Code": "123456789",
           },
-        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/party2":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/party2":
           {
             "@type": "https://schema.org/Person",
             "https://schema.org/address":
