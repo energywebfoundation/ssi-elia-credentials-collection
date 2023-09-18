@@ -2,7 +2,7 @@
 
 # Commands to run
 COMMANDS=(
-  "tldrc -i contract.tldr json-schema https://vc-context.elia.be/2022/v1/Contract"
+  "tldrc -i contract.tldr json-schema https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract"
   "tldrc -i contract.tldr json-schema https://schema.org/Organization"
   "tldrc -i contract.tldr json-schema https://schema.org/Person"
 )

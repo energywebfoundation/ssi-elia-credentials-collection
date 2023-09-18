@@ -1,7 +1,7 @@
 import { Options, compact } from "jsonld"
 import credential from "./contract-credential.json"
 // import dataDisplay from "./device-info-data-display.json"
-import schema from "./contract-credential.json"
+import schema from "./schemas/contract-schema.json"
 import { issueAndVerify } from "../../../test/issue-and-verify"
 import {
   digitalBazaarDocumentLoader,
@@ -25,40 +25,44 @@ describe("Contract", () => {
     }
     const compacted = await compact(credential, {}, options)
     const expected = {
-      "@id": "<some URI, e.g. https://elia.be/credential/1>",
+      "@id": "<some URI, e.g. https://example.com/credential/1>",
       "@type": [
         "https://www.w3.org/2018/credentials#VerifiableCredential",
-        "https://vc-context.elia.be/2022/v1/ContractCredential",
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/credentials/2023-nest-project/Contract-Credential",
       ],
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@id": "contractIdScheme:456",
         "@type": "Contract",
-        "https://vc-context.elia.be/2022/v1/Contract/applicationLaw":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/applicationLaw":
           "Belgium laws",
-        "https://vc-context.elia.be/2022/v1/Contract/compensationOfTheOffer":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/compensationOfTheOffer":
           "0",
-        "https://vc-context.elia.be/2022/v1/Contract/contractedItem": {
-          "@id": "deviceIdScheme:123",
-          "@type": "https://vc-context.elia.be/2022/v1/Device",
-        },
-        "https://vc-context.elia.be/2022/v1/Contract/expressionOfTheOffer":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/contractedItem":
+          {
+            "@id": "deviceIdScheme:123",
+            "@type":
+              "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/credentials/2023-nest-project/Device",
+          },
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/expressionOfTheOffer":
           "Lorem ipsum, ...",
-        "https://vc-context.elia.be/2022/v1/Contract/jurisdiction":
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/jurisdiction":
           "Courts of Bruxelles",
-        "https://vc-context.elia.be/2022/v1/Contract/party1": {
-          "@type": "https://schema.org/Organization",
-          "https://schema.org/address":
-            "Boulevard de l'Empereur, 1000 Bruxelles",
-          "https://schema.org/brand": "Car Manufacturer Inc",
-          "https://schema.org/iso6523Code": "123456789",
-        },
-        "https://vc-context.elia.be/2022/v1/Contract/party2": {
-          "@type": "https://schema.org/Person",
-          "https://schema.org/address":
-            "Boulevard de l'Empereur, 1000 Bruxelles",
-          "https://schema.org/familyName": "Doe",
-          "https://schema.org/givenName": "John",
-        },
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/party1":
+          {
+            "@type": "https://schema.org/Organization",
+            "https://schema.org/address":
+              "Boulevard de l'Empereur, 1000 Bruxelles",
+            "https://schema.org/brand": "Car Manufacturer Inc",
+            "https://schema.org/iso6523Code": "123456789",
+          },
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract/party2":
+          {
+            "@type": "https://schema.org/Person",
+            "https://schema.org/address":
+              "Boulevard de l'Empereur, 1000 Bruxelles",
+            "https://schema.org/familyName": "Doe",
+            "https://schema.org/givenName": "John",
+          },
       },
       "https://www.w3.org/2018/credentials#issuanceDate": {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",

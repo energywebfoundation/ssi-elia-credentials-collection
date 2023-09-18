@@ -29,9 +29,7 @@ append_to_json() {
 
 # Commands to run
 COMMANDS=(
-  "tldrc -i contract.tldr json-ld-context https://vc-context.elia.be/2022/v1/Contract"
-  "tldrc -i contract.tldr json-ld-context https://schema.org/Organization"
-  "tldrc -i contract.tldr json-ld-context https://schema.org/Person"
+  "tldrc -i contract.tldr json-ld-context https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/Contract"
 )
 
 # Loop through each command, execute it, and append its result to the JSON array
