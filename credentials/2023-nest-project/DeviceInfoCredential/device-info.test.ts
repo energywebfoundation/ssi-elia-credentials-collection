@@ -28,7 +28,7 @@ describe("Device-Info", () => {
       "@id": "<some URI, e.g. https://example.com/credential/1>",
       "@type": [
         "https://www.w3.org/2018/credentials#VerifiableCredential",
-        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/credentials/2023-nest-project/Device-Info-Credential",
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/credentials/2023-nest-project/DeviceInfoCredential",
       ],
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@id": "deviceIdScheme:123",
