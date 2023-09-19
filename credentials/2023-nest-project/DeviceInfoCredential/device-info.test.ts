@@ -8,11 +8,11 @@ import {
   transmuteDocumentLoader,
 } from "../../2022-neo/neo-document-loader"
 // import { verifyDataDisplayStructure } from "../../../test/verify-data-display-structure"
-import { verifyCredentialSubjectSchema } from "../../../test/verify-credential-subject-schema"
+import { verifyCredentialSubjectSchema2020 } from "../../../test/verify-credential-subject-schema-2020"
 
 describe("Device-Info", () => {
   test("Credential should match JSON Schema", async () => {
-    verifyCredentialSubjectSchema(schema, credential)
+    verifyCredentialSubjectSchema2020(schema, credential)
   })
 
   test("Credential can be issued and verified", async () => {

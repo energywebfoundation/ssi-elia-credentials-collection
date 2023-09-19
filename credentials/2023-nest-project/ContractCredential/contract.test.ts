@@ -1,18 +1,25 @@
 import { Options, compact } from "jsonld"
 import credential from "./contract-credential.json"
 // import dataDisplay from "./device-info-data-display.json"
-import schema from "./schemas/contract-schema.json"
+import contractSchema from "./schemas/contract-schema.json"
+import organizationSchema from "./schemas/organization-schema.json"
+import personSchema from "./schemas/person-schema.json"
+import deviceSchema from "./schemas/device-schema.json"
 import { issueAndVerify } from "../../../test/issue-and-verify"
 import {
   digitalBazaarDocumentLoader,
   transmuteDocumentLoader,
 } from "../../2022-neo/neo-document-loader"
 // import { verifyDataDisplayStructure } from "../../../test/verify-data-display-structure"
-import { verifyCredentialSubjectSchema } from "../../../test/verify-credential-subject-schema"
+import { verifyCredentialSubjectSchema2020 } from "../../../test/verify-credential-subject-schema-2020"
 
-describe("Contract", () => {
+describe.only("Contract", () => {
   test("Credential should match JSON Schema", async () => {
-    verifyCredentialSubjectSchema(schema, credential)
+    verifyCredentialSubjectSchema2020(contractSchema, credential, [
+      organizationSchema,
+      personSchema,
+      deviceSchema,
+    ])
   })
 
   test("Credential can be issued and verified", async () => {
