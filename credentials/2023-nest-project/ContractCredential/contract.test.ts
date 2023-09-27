@@ -13,7 +13,7 @@ import {
 // import { verifyDataDisplayStructure } from "../../../test/verify-data-display-structure"
 import { verifyCredentialSubjectSchema2020 } from "../../../test/verify-credential-subject-schema-2020"
 
-describe.only("Contract", () => {
+describe("Contract", () => {
   test("Credential should match JSON Schema", async () => {
     verifyCredentialSubjectSchema2020(contractSchema, credential, [
       organizationSchema,
