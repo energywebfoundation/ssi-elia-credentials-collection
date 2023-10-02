@@ -37,7 +37,7 @@ describe("Contract", () => {
       "@id": "<some URI, e.g. https://example.com/credential/1>",
       "@type": [
         "https://www.w3.org/2018/credentials#VerifiableCredential",
-        "ContractPartyCredential",
+        "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/ContractCredential",
       ],
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@id": "did:example:subject",
