@@ -41,7 +41,8 @@ describe("Contract", () => {
       ],
       "https://www.w3.org/2018/credentials#credentialSubject": {
         "@id": "did:example:subject",
-        "@type": "ContractParty",
+        "@type":
+          "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/ContractParty",
         "https://github.com/energywebfoundation/elia-energyblocks-vcs/tree/master/ontology/v1/agreesTo":
           {
             "@id": "contractIdScheme:456",
