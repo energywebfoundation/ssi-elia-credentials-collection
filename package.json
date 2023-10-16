@@ -10,8 +10,8 @@
     "postinstall": "patch-package",
     "lint": "eslint \"**/*.ts\" --ignore-pattern node_modules/ --fix"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Energy Web",
+  "license": "GPL-3.0-or-later",
   "engines": {
     "node": ">=16.0.0 <17.0.0"
   },
